@@ -1,0 +1,822 @@
+// ---------------------------------------
+//                  Colors
+// ----------------------------------------
+:root {
+    --dark: #223;
+    --white: #f6f6f6;
+    --gray: #727272;
+    --light-gray: #e1e1e1;
+    --white-gray: #f1f1f1;
+    --lightblue: #48cae4;
+    --strong-lightblue: #08cff7;
+    --black: #000814;
+    --coral: #f07167;
+}
+
+// ---------------------------------------
+//                Typography
+// ----------------------------------------
+$font-lexend-deca: 'Lexend Deca', sans-seif;
+$font-fira-code: 'Fira Code', monospace;
+
+.heading-2 { // Used in the headings of each section
+    font-family: $font-lexend-deca;    
+    font-size: 1.6rem;
+    // font-size: 2.5rem;
+}
+
+.heading-3 { // Used in the Works Component
+    font-family: $font-lexend-deca;
+    font-size: 1.875rem;
+    font-weight: 500;
+}
+
+.heading-4 {
+    font-family: $font-lexend-deca;
+    font-size: 1.875rem;
+    font-weight: 400;
+}
+
+// ---------------------------------------
+//                  Resets
+// ----------------------------------------
+html {
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: color 100ms ease, background-color 200ms ease;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+// ---------------------------------------
+//               Media Queries
+// ----------------------------------------
+@mixin tablet-media {
+    @media only screen and (min-width: 750px) {
+        @content;
+    }
+}
+
+@mixin mini-tablet-media {
+    @media only screen and (min-width: 450px) {
+        @content;
+    }
+}
+
+@mixin pc-media {
+    @media only screen and (min-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin large-pc-media {
+    @media only screen and (min-width: 1500px) {
+        @content;
+    }
+}
+// ---------------------------------------
+//                  Base
+// ----------------------------------------
+body {
+    background-color: var(--dark);
+    color: var(--white);
+    font-family: $font-fira-code;
+}
+
+.light-mode {
+    background-color: var(--white-gray);
+    color: var(--dark);
+
+    & .accent {
+        color: var(--strong-lightblue);
+    }
+
+    & .logo,
+    & .nav__link {
+        color: var(--dark);
+    }
+
+    & .mobile-nav__btn {
+        color: var(--dark);
+    }
+
+    & .mobile-nav__container {
+        background-color: var(--dark);
+    }
+
+    & .tool {
+        background-color: var(--light-gray);
+        font-weight: 500;
+    }
+
+    & .btn {
+        font-weight: normal;
+    }
+
+    & .work__techs {
+        font-weight: 400;
+    }
+
+    & .work__links__link {
+        color: var(--dark);
+    }
+
+    & .about-me__paragraph {
+        font-weight: 500;
+    }
+
+    & .form__input,
+    & .form__textarea {
+        background-color: var(--light-gray);
+        color: var(--dark);
+        font-weight: 500;
+    }
+
+    & .form__title {
+        color: var(--strong-lightblue);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+}
+
+// ---------------------------------------
+//               Components
+// ----------------------------------------
+.logo {
+    font-size: 2.4rem;
+    font-weight: 400;
+
+    &__link {
+        color: var(--white)
+    }
+}
+
+// ----------------- Navbar -----------------
+
+.nav {
+    &__list {
+        display: flex;
+        gap: 1.5rem;
+        display: none;
+    }
+
+    &__link {
+        color: var(--white);
+
+        &:hover {
+            text-decoration: underline;
+            font-weight: 500;
+        }
+    }
+
+    @include tablet-media {
+        &__list {
+            display: flex;
+        }
+    }
+}
+
+.dark-mode-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 4.4rem;
+    height: 1.8rem;
+    border-radius: 1rem;
+    padding: 0 0.4rem;
+    background-color: var(--light-gray);
+    cursor: pointer;
+
+    &__switcher {
+        position: absolute;
+        left: 0.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.3rem;
+        height: 1.3rem;
+        border-radius: 50%;
+        background-color: var(--gray);
+        transition: left 300ms ease-in-out;
+    }
+}
+
+.icon--sun,
+.icon--moon {
+    font-size: 0.9rem;
+}
+
+// ----------------- Mobile Navbar -----------------
+.mobile-nav {
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        user-select: none;
+        z-index: -1;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    &__btn {
+        color: var(--white);
+        font-size: 1.6rem; 
+        
+        &--close {
+            color: var(--white);
+            font-size: 1.6rem; 
+        }
+    }
+
+    &__container {
+        position: absolute;
+        background-color: var(--black);
+        height: 100vh;
+        width: 10rem;
+        top: 0;
+        right: -100%;
+        padding: 2rem 0;
+        transition: right 400ms ease-out;
+    }
+
+    &__link {
+        color: var(--white);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.4rem;
+        font-size: 1.2rem;
+        width:75%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__item:first-child {
+        margin-left: auto;
+    }
+
+    &__item:last-child {
+        margin-top: auto;
+    }
+
+    @include tablet-media {
+        &__wrapper,
+        &__btn {
+            display: none;
+        }
+    }
+}
+
+// ----------------- Hero -----------------
+.hero {
+    width: 90%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__img {
+        display: none;
+    }
+
+    &__greeting {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    &__title {
+        font-family: $font-lexend-deca;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 0.3rem;
+    }
+
+    &__subtitle {
+        font-family: $font-lexend-deca;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    @include mini-tablet-media {
+        &__title {
+            font-size: 3rem;
+        }
+
+        &__subtitle {
+            font-size: 1.3rem;
+        }
+    }
+
+    @include pc-media {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        &__img {
+            display: block;
+            width: 50%;
+        }
+
+        &__content {
+            width: 50%;
+        }
+    }
+
+    @include large-pc-media {
+        &__title {
+            font-size: 3.75rem;   
+        }
+
+        &__subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem
+        }
+
+        &__text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+// ----------------- Tools Section -----------------
+.tools {
+    width: 90%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__container {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+
+        @include tablet-media {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+}
+
+.tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 8rem;
+    width: 100%;
+    max-width: 10rem;
+    border-radius: 4px;
+    background-color: var(--black);
+
+    &__icon {
+        width: 70px;    
+        aspect-ratio: 1 / 1;
+    }
+
+    @include large-pc-media {
+        min-height: 10rem;
+        max-width: 13rem;
+        gap: 1rem;
+
+        &__icon {
+            width: 80px;
+        }
+    }
+}
+
+// ----------------- Works Section -----------------
+.works {
+    width: 90%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.work {
+    
+    &__img-placeholder {
+        position: relative;
+        width: 100%;
+        min-height: 12rem;
+        background-color: var(--black);
+        overflow: hidden;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+
+        &::before {
+            content: 'Coming Soon';
+            position: absolute;
+            color: var(--black);
+            background-color: var(--white);
+            font-family: $font-lexend-deca;
+            font-weight: 500;
+            text-align: center;
+            width: 130%;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%) rotate(-27deg);
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 1.5rem;
+        font-family: $font-lexend-deca;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    &__techs {
+        color: var(--gray);
+        font-weight: 500;
+        display: flex;
+        gap: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__links__link {
+        color: var(--white);
+    }
+
+    @include tablet-media {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        &__img-placeholder {
+            width: 50%;
+        }
+
+        &__content {
+            width: 50%;
+        }
+
+        &:nth-child(even) .work__content {
+            order:  1;
+        }
+
+        &:nth-child(even) .work__img-placeholder {
+            order:  2;
+        }
+    }
+
+    @include pc-media {
+        gap: 5rem;
+        &__img-placeholder {
+            min-height: 15rem;
+        }
+
+        &__img-placeholder::before {
+            transform: translateY(-50%) translateX(-50%) rotate(-20deg);
+        }
+    }
+
+    @include large-pc-media {
+        &__img-placeholder {
+            min-height: 22rem;
+        }
+
+        &__img-placeholder::before {
+            transform: translateY(-50%) translateX(-50%) rotate(-23deg);
+        }
+    }
+}
+
+// ----------------- About Me Section -----------------
+.about-me {
+    width: 90%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__img {
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        font-family: $font-lexend-deca;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    &__paragraph {
+        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    @include pc-media {
+        &__container {
+            display: flex;
+            gap: 5rem;
+            align-items: flex-start;
+        }
+
+        &__img {
+            width: 50%;
+            max-width: 45rem;
+        }
+
+        &__content {
+            width: 50%;
+        }
+    }
+
+    @include large-pc-media {
+        &__container {
+            align-items: center;
+        }
+
+        &__title {
+            font-size: 2rem;
+            margin-bottom: 1.4rem;
+        }
+
+        &__paragraph {
+            font-size: 1.05rem;
+            margin-bottom: 1.3rem;
+        }
+    }
+}
+
+// ----------------- Contact Form -----------------
+.form {
+    display: grid;
+    justify-content: start;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 90%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__title__text {
+        font-family: $font-lexend-deca;
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+
+    &__text {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 45rem;
+    }
+
+    &__label {
+        margin-bottom: 0.5rem;
+    }
+
+    &__input {
+        height: 2.4rem;
+        border: none;
+        border-radius: 4px;
+        background-color: var(--black);
+        padding: 0 0.6rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__textarea {
+        padding: 0.6rem;
+        resize: vertical;
+        min-height: 7rem;
+    }
+
+    &__input,
+    &__textarea {
+        font-family: $font-fira-code;
+        border: none;
+        border-radius: 4px;
+        background-color: var(--black);
+        color: var(--white);
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+
+    &__label,
+    &__input,
+    &__textarea {
+        display: block;
+        width: 100%;
+    }
+
+    @include tablet-media {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        
+        &__wrapper:nth-child(1) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        &__wrapper:nth-child(2) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        &__wrapper:nth-child(3) {
+            grid-column: 1 / -1;
+            grid-row: 2 / 3;
+        }
+
+        &__textarea {
+            min-height: 12rem;
+        }
+
+        &__btn {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+    }
+
+    @include pc-media {
+        &__title__text {
+            font-size: 2.4rem;
+        }
+
+        &__text {
+            font-size: 1.05rem;
+        }
+    }
+
+    @include large-pc-media {
+        &__input {
+            min-height: 3rem;
+            font-size: 1rem;
+        }
+
+        &__textarea {
+            font-size: 1rem;
+            padding: 1rem;
+            min-height: 20rem;
+        }
+    }
+}
+
+// ----------------- Footer -----------------
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    min-height: 2rem;
+    margin-top: auto;
+    
+    &__text {
+        font-size: 0.75rem;
+        color: var(--white);
+        text-align: center;
+    }
+
+    .heart-icon {
+        color: #da0d0d;
+    }
+}
+
+// ----------------- Button -----------------
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 3rem;
+    width: 11rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: $font-fira-code;
+    letter-spacing: 1px;
+    border: 2px solid var(--lightblue);
+    color: var(--lightblue);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--white);
+        background-color: var(--lightblue);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    @include large-pc-media {
+        font-size: 1.2rem;
+        min-height: 3.5rem;
+        width: 13rem;
+    }
+}
+// ---------------------------------------
+//                 Helpers
+// ----------------------------------------
+.invisible {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    user-select: none;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.accent {
+    color: var(--lightblue);
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-1-5 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-2-5 {
+    margin-bottom: 2.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+.mb-6 {
+    margin-bottom: 6rem;
+}
