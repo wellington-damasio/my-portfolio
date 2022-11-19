@@ -194,7 +194,7 @@ body {
   width: 10rem;
   top: 0;
   right: -100%;
-  padding: 2rem 0;
+  padding: 2rem 0 6rem 0;
   transition: right 400ms ease-out;
 }
 .mobile-nav__link {
