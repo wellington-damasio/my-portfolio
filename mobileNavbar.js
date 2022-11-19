@@ -8,6 +8,7 @@ const mobileNavLink = document.querySelectorAll('.mobile-nav__link')
 mobileNavOpenButton.addEventListener('click', () => {
     showMobileNavbar()
     toggleBodyScroll()
+    window.scrollTo(0, 0)
 })
 
 mobileNavCloseButton.addEventListener('click', () => {
