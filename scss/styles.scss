@@ -6,7 +6,7 @@
     --white: #f6f6f6;
     --gray: #727272;
     --light-gray: #e1e1e1;
-    --white-gray: #f1f1f1;
+    --white-gray: #f0f0f0;
     --lightblue: #48cae4;
     --strong-lightblue: #08cff7;
     --black: #000814;
@@ -102,9 +102,12 @@ body {
     background-color: var(--dark);
     color: var(--white);
     font-family: $font-fira-code;
+    overflow-x: hidden;
 }
 
 .light-mode {
+    --lightblue: var(--strong-lightblue);
+
     background-color: var(--white-gray);
     color: var(--dark);
 
@@ -142,10 +145,6 @@ body {
         color: var(--dark);
     }
 
-    & .about-me__paragraph {
-        font-weight: 500;
-    }
-
     & .form__input,
     & .form__textarea {
         background-color: var(--light-gray);
@@ -154,7 +153,7 @@ body {
     }
 
     & .form__title {
-        color: var(--strong-lightblue);
+        color: var(--lightblue);
     }
 }
 
@@ -303,6 +302,47 @@ body {
 }
 
 // ----------------- Hero -----------------
+@keyframes flow-down {
+    0% {
+        position: relative;
+        top: -8rem;
+        opacity: 0; 
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes flow-left {
+    0% {
+        opacity: 0;
+        right: -100%;
+    }
+
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+.anm-flow-down {
+    animation-name: flow-down;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation-fill-mode: forwards;
+}
+
+.anm-flow-left {
+    animation-name: flow-left;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation-fill-mode: forwards;
+}
+
 .hero {
     width: 90%;
     max-width: 1800px;
@@ -311,6 +351,14 @@ body {
 
     &__img {
         display: none;
+    }
+
+    &__content {
+        position: relative;
+        animation-name: flow-down;
+        animation-duration: 1.5s;
+        animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        animation-fill-mode: forwards;
     }
 
     &__greeting {
@@ -337,6 +385,20 @@ body {
         margin-bottom: 1rem;
     }
 
+    .btn {
+        margin-bottom: 1rem;
+    }
+
+    &__icons {
+        display: flex;
+        gap: 1rem;
+
+        & > a {
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+    }
+
     @include mini-tablet-media {
         &__title {
             font-size: 3rem;
@@ -353,7 +415,13 @@ body {
         align-items: center;
         &__img {
             display: block;
+            position: relative;
+            right: -100%;
             width: 50%;
+            animation-name: flow-left;
+            animation-duration: 2s;
+            animation-delay: 700ms;
+            animation-fill-mode: forwards;
         }
 
         &__content {
@@ -379,6 +447,30 @@ body {
 }
 
 // ----------------- Tools Section -----------------
+@keyframes rotate {
+  0% {
+    transform: rotate(0)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1)
+  }
+
+  50% {
+    transform: scale(1.2)
+  }
+
+  100% {
+    transform: scale(1)
+  }
+}
+
 .tools {
     width: 90%;
     max-width: 1800px;
@@ -408,10 +500,29 @@ body {
     max-width: 10rem;
     border-radius: 4px;
     background-color: var(--black);
+    cursor: pointer;
 
     &__icon {
         width: 70px;    
         aspect-ratio: 1 / 1;
+    }
+
+    @include pc-media {
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:not(:last-child):hover .tool__icon {
+            animation-name: pulse;
+            animation-duration: 300ms;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        &:last-child:hover .tool__icon {
+           animation-name: rotate;
+           animation-duration: 2s;
+           animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
     }
 
     @include large-pc-media {
@@ -440,6 +551,15 @@ body {
 }
 
 .work {
+    position: relative;
+
+    & > .website-link {
+        position: absolute;
+        width: 100%;
+        height: 44%;
+        right: 0;
+        top: 0;
+    }
     
     &__img-placeholder {
         position: relative;
@@ -465,6 +585,15 @@ body {
         }
     }
 
+    &__img {
+        width: 100%;
+        min-height: 12rem;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+        aspect-ratio:  3.5 / 2;
+        object-fit: cover;
+    }
+
     &__title {
         font-weight: 500;
         font-size: 1.5rem;
@@ -474,7 +603,7 @@ body {
 
     &__text {
         font-size: 0.9rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     &__techs {
@@ -483,6 +612,7 @@ body {
         display: flex;
         gap: 1.1rem;
         margin-bottom: 1rem;
+        margin-top: 1rem;
     }
 
     &__links__link {
@@ -494,7 +624,23 @@ body {
         align-items: center;
         gap: 2rem;
 
-        &__img-placeholder {
+        &:nth-child(even) > .website-link {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            right: 0;
+            top: 0;
+        }
+    
+        &:nth-child(odd) > .website-link {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 0;
+        }
+
+        &__img-placeholder,
+        &__img {
             width: 50%;
         }
 
@@ -506,14 +652,16 @@ body {
             order:  1;
         }
 
-        &:nth-child(even) .work__img-placeholder {
+        &:nth-child(even) .work__img-placeholder,
+        &:nth-child(even) .work__img {
             order:  2;
         }
     }
 
     @include pc-media {
         gap: 5rem;
-        &__img-placeholder {
+        &__img-placeholder,
+        &__img {
             min-height: 15rem;
         }
 
@@ -523,7 +671,8 @@ body {
     }
 
     @include large-pc-media {
-        &__img-placeholder {
+        &__img-placeholder,
+        &__img {
             min-height: 22rem;
         }
 
@@ -541,7 +690,16 @@ body {
     margin-right: auto;
 
     &__img {
+        position: relative;
+        top: -8rem;
+        opacity: 0;
         margin-bottom: 2rem;
+    }
+
+    &__content {
+        position: relative;
+        opacity: 0;
+        right: -100%;
     }
 
     &__title {
@@ -771,6 +929,50 @@ body {
         width: 13rem;
     }
 }
+
+// ---------------------------------------
+//             Thank you Page
+// ----------------------------------------
+.thank-you {
+    min-height: 100vh;
+    text-align: center;
+
+    main {
+        max-width: 35rem;
+        width: 90%;
+        margin-inline: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+
+        @include tablet-media {
+            font-size: 2.2rem;
+        }
+    }
+
+    p {
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: var(--lightblue);
+        text-decoration: underline;
+    }
+
+    footer {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+
 // ---------------------------------------
 //                 Helpers
 // ----------------------------------------
@@ -779,6 +981,11 @@ body {
     position: absolute;
     opacity: 0;
     user-select: none;
+}
+
+.text-link {
+    color: #ee6c4d;
+    text-decoration: underline;
 }
 
 .noscroll {
