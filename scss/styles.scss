@@ -328,6 +328,18 @@ body {
     }
 }
 
+@keyframes flow-right {
+    0% {
+        opacity: 0;
+        left: -100%;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
 .anm-flow-down {
     animation-name: flow-down;
     animation-duration: 1.5s;
@@ -339,7 +351,7 @@ body {
     animation-name: flow-left;
     animation-duration: 1.5s;
     animation-delay: 1s;
-    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
     animation-fill-mode: forwards;
 }
 
@@ -396,6 +408,10 @@ body {
         & > a {
             color: var(--white);
             font-size: 1.2rem;
+
+            &:hover {
+                color: var(--lightblue);
+            }
         }
     }
 
@@ -613,6 +629,12 @@ body {
         gap: 1.1rem;
         margin-bottom: 1rem;
         margin-top: 1rem;
+        cursor: default;
+        transition: color 250ms ease;
+
+        &__tech:hover {
+            color: var(--white);
+        }
     }
 
     &__links__link {
@@ -689,11 +711,16 @@ body {
     margin-left: auto;
     margin-right: auto;
 
+    &__container {
+        overflow: hidden;
+    }
+
     &__img {
         position: relative;
-        top: -8rem;
+        right: -100%;
         opacity: 0;
         margin-bottom: 2rem;
+        overflow: hidden;
     }
 
     &__content {
@@ -724,6 +751,8 @@ body {
         &__img {
             width: 50%;
             max-width: 45rem;
+            top: -8rem;
+            right: 0;
         }
 
         &__content {
