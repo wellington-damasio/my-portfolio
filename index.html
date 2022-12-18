@@ -1,430 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Portfolio | Wellington Damasio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 
-    <!-- CSS Stylesheet -->
-    <link href="css/styles.css" rel="stylesheet">
+<head>
+  <title>Portfolio | Wellington Damasio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Lexend+Deca:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Lexend+Deca:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
-    <script defer src="mobileNavbar.js"></script>
-    <script defer src="darkModeToggle.js"></script>
-    <script defer src="aboutMeAnimation.js"></script>
-  </head>
-  <body>
-    <header class="header mb-3">
-      <a href="#" class="logo__link"><h1 class="logo">WD</h1></a>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#works" class="nav__link">Works</a>
-          </li>
-          <li class="nav__item">
-            <a href="#about-me" class="nav__link">About me</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
-          <li class="nav__item">
-            <div class="dark-mode-toggle" style="color: #e9c46a;">
-              <div class="dark-mode-toggle__switcher"></div>
-              <i class="fa-solid fa-moon icon--moon"></i>
-              <i class="fa-solid fa-sun icon--sun"></i>
-            </div>
-          </li>
-        </ul>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <!-- Mobile Navbar -->
-        <button class="mobile-nav__btn">
-          <i class="fa-sharp fa-solid fa-bars"></i>
-        </button>
-      </nav>
-    </header>
+  <!-- JavaScript -->
+  <script defer src="js/bundle.js"></script>
+</head>
 
-    <div class="mobile-nav__wrapper">
-      <div class="mobile-nav__container">
-        <ul class="mobile-nav__list">
-          <li class="mobile-nav__item">
-            <button class="mobile-nav__btn--close">
-              <i class="fa-sharp fa-solid fa-x close-icon"></i>
-            </button>
-          </li>
-          <li class="mobile-nav__item">
-            <a href="#works" class="mobile-nav__link">Works</a>
-          </li>
-          <li class="mobile-nav__item">
-            <a href="#about-me" class="mobile-nav__link">About Me</a>
-          </li>
-          <li class="mobile-nav__item">
-            <a href="#contact" class="mobile-nav__link">Contact</a>
-          </li>
-          <li class="mobile-nav__item">
-            <div class="dark-mode-toggle" style="color: #e9c46a;">
-              <div class="dark-mode-toggle__switcher"></div>
-              <i class="fa-solid fa-moon icon--moon"></i>
-              <i class="fa-solid fa-sun icon--sun"></i>
-            </div>
-          </li>
-        </ul>
-      </div>
+<body>
+  <header class="header mb-3">
+    <a href="#" class="logo__link">
+      <h1 class="logo">WD</h1>
+    </a>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#works" class="nav__link">Works</a>
+        </li>
+        <li class="nav__item">
+          <a href="#about-me" class="nav__link">About me</a>
+        </li>
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">Contact</a>
+        </li>
+        <li class="nav__item">
+          <div class="dark-mode-toggle" style="color: #e9c46a;">
+            <div class="dark-mode-toggle__switcher"></div>
+            <i class="fa-solid fa-moon icon--moon"></i>
+            <i class="fa-solid fa-sun icon--sun"></i>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Mobile Navbar -->
+      <button class="mobile-nav__btn">
+        <i class="fa-sharp fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <div class="mobile-nav__wrapper">
+    <div class="mobile-nav__container">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item">
+          <button class="mobile-nav__btn--close">
+            <i class="fa-sharp fa-solid fa-x close-icon"></i>
+          </button>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="#works" class="mobile-nav__link">Works</a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="#about-me" class="mobile-nav__link">About Me</a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="#contact" class="mobile-nav__link">Contact</a>
+        </li>
+        <li class="mobile-nav__item">
+          <div class="dark-mode-toggle" style="color: #e9c46a;">
+            <div class="dark-mode-toggle__switcher"></div>
+            <i class="fa-solid fa-moon icon--moon"></i>
+            <i class="fa-solid fa-sun icon--sun"></i>
+          </div>
+        </li>
+      </ul>
     </div>
+  </div>
 
-    <main>
-      <!-- Hero Section -->
-      <article class="hero mb-6">
-        <div class="hero__content">
-          <small class="hero__greeting">Hi, my name is</small>
-          <h2 class="hero__title">Wellington Damasio</h2>
-          <h1 class="hero__subtitle accent">Frontend Developer / Web Designer</h1>
-          <p class="hero__text">
-            I love building landing pages and interfaces using modern technologies
-            and I'm always focused on delivering projects with 
-            <span class="accent">quality</span> and <span class="accent">agility</span>.
-          </p>
-          <a href="#contact" class="btn">Get in Touch</a>
-          <div class="hero__icons">
-            <a href="https://github.com/wellington-damasio" target="_blank">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/wellington-damasio/" 
-              target="_blank"
-            >
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
+  <main>
+    <!-- Hero Section -->
+    <article class="hero mb-6">
+      <div class="hero__content">
+        <small class="hero__greeting">Hi, my name is</small>
+        <h2 class="hero__title">Wellington Damasio</h2>
+        <h1 class="hero__subtitle accent">Frontend Developer / Web Designer</h1>
+        <p class="hero__text">
+          I love building landing pages and interfaces using modern technologies
+          and I'm always focused on delivering projects with
+          <span class="accent">quality</span> and <span class="accent">agility</span>.
+        </p>
+        <a href="#contact" class="btn">Get in Touch</a>
+        <div class="hero__icons">
+          <a href="https://github.com/wellington-damasio" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/wellington-damasio/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
-
-        <img src="images/developer.svg" alt="" class="hero__img">
-      </article>
-
-      <!-- Tools Section -->
-      <article class="tools mb-6">
-        <h3 class="heading-2 mb-2">Tools I like to use</h3>
-        <div class="tools__container">
-          <!-- Tool #1 -->
-          <div class="tool">
-            <img src="images/html.png" alt="" class="tool__icon">
-            <p class="tool__name">HTML5</p>
-          </div>
-
-          <!-- Tool #2 -->
-          <div class="tool">
-            <img src="images/css.png" alt="" class="tool__icon">
-            <p class="tool__name">CSS3</p>
-          </div>
-
-          <!-- Tool #3 -->
-          <div class="tool">
-            <img src="images/javascript.png" alt="" class="tool__icon">
-            <p class="tool__name">JavaScript</p>
-          </div>
-
-          <!-- Tool #4 -->
-          <div class="tool">
-            <img src="images/bootstrap.png" alt="" class="tool__icon">
-            <p class="tool__name">Bootstrap</p>
-          </div>
-
-          <!-- Tool #5 -->
-          <div class="tool">
-            <img src="images/figma.png" alt="" class="tool__icon">
-            <p class="tool__name">Figma</p>
-          </div>
-
-          <!-- Tool #6 -->
-          <div class="tool">
-            <img src="images/react.png" alt="" class="tool__icon">
-            <p class="tool__name">React</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Works Section -->
-      <section class="works mb-6" id="works">
-        <h3 class="heading-2 mb-2">Works</h3>
-
-        <div class="works__container">
-          <!-- Work #1 -->
-          <article class="work" data-animation="fadeIn-right">
-            <!-- <div class="work__img-placeholder"></div> -->
-            <img 
-              src="images/screenshots/payAPI_home.png" 
-              class="work__img"
-              alt=""
-            >
-            <a 
-              href="https://wellington-damasio.github.io/payAPI-landing-page/index.html"
-              class="website-link"
-              target="_blank"
-            >
-            </a>
-            <div class="work__content">
-              <h3 class="work__title accent">PayAPI Website</h3>
-              <p class="work__text">
-                This was a challenge from 
-                <a class="text-link" href="https://www.frontendmentor.io/"
-                  target="_blank">Frontend Mentor</a>. One of the most complex 
-                  and fun layouts I coded so far.
-              </p>
-              <p class="work__text">This is a demonstration of somethings I can do with my skills 
-                <span class="accent">CSS</span> skills
-              </p>
-              <div class="work__techs">
-                <small class="work__techs__tech">HTML5</small>
-                <small class="work__techs__tech">CSS3</small>
-                <small class="work__techs__tech">JavaScript</small>
-                <small class="work__techs__tech">Figma</small>
-              </div>
-              <div class="work__links">
-                <a 
-                  href="https://github.com/wellington-damasio/payAPI-landing-page" 
-                  target="_blank"
-                  class="work__links__link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a 
-                  href="https://wellington-damasio.github.io/payAPI-landing-page/index.html" 
-                  target="_blank"
-                  class="work__links__link"
-                >
-                  <i class="fa-solid fa-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Work #2 -->
-          <article class="work" data-animation="fadeIn-left">
-            <!-- <div class="work__img-placeholder"></div> -->
-            <img 
-              src="images/screenshots/todo_list.png" 
-              alt="" 
-              class="work__img"
-            >
-            <a 
-              href="https://damasio-todo.netlify.app/"
-              class="website-link"
-              target="_blank"
-            >
-            </a>
-            <div class="work__content">
-              <h3 class="work__title accent">Rocket's Todo List</h3>
-              <p class="work__text">
-                A todo list where you can create tasks, complete tasks and so on.
-              </p>
-              <p class="work__text">
-                One of my first projects using <span class="accent">React</span> 
-                with <span class="accent">TypeScript</span>, two of the 
-                most used and effective tools of modern web development.
-                <span style="color: var(--gray)">(for portuguese speakers)</span>
-              </p>
-              <div class="work__techs">
-                <small class="work__techs__tech">HTML5</small>
-                <small class="work__techs__tech">CSS3</small>
-                <small class="work__techs__tech">React</small>
-                <small class="work__techs__tech">TypeScript</small>
-                <small class="work__techs__tech">Figma</small>
-              </div>
-              <div class="work__links">
-                <a 
-                  href="https://github.com/wellington-damasio/todo_list" 
-                  target="_blank"
-                  class="work__links__link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a 
-                  href="https://damasio-todo.netlify.app/" 
-                  target="_blank"
-                  class="work__links__link"
-                >
-                  <i class="fa-solid fa-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Work #3 -->
-          <article class="work" data-animation="fadeIn-right">
-            <!-- <div class="work__img-placeholder"></div> -->
-            <img src="images/screenshots/sunnyside_lp.png" alt="" class="work__img">
-            <a 
-              href="https://wellington-damasio.github.io/sunnyside_landing_page"
-              class="website-link"
-              target="_blank"
-            >
-            </a>
-            <div class="work__content">
-              <h3 class="work__title accent">Sunnyside Home Page</h3>
-              <p class="work__text">
-                Another challenge from 
-                <a class="text-link" href="https://www.frontendmentor.io/" 
-                  target="_blank">Frontend Mentor</a>.
-              </p>
-              <p class="work__text">
-                This project upgraded my "positioning elements skills" to the 
-                next level. Working with the typography was also interestig
-              </p>
-              <p class="work__text">
-                I'm planning to create own new designs for the other pages as 
-                well.
-              </p>
-              <div class="work__techs">
-                <small class="work__techs__tech">HTML5</small>
-                <small class="work__techs__tech">CSS3</small>
-                <small class="work__techs__tech">JavaScript</small>
-                <small class="work__techs__tech">Figma</small>
-              </div>
-              <div class="work__links">
-                <a 
-                  href="https://github.com/wellington-damasio/sunnyside_landing_page"
-                  target="_blank"
-                  class="work__links__link"
-                  >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a 
-                  href="https://wellington-damasio.github.io/sunnyside_landing_page" 
-                  target="_blank"
-                  class="work__links__link"
-                >
-                  <i class="fa-solid fa-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Work #4 -->
-          <article class="work" data-animation="fadeIn-left">
-            <!-- <div class="work__img-placeholder"></div> -->
-              <img 
-              src="images/screenshots/huddle_lp.png" 
-              class="work__img"
-              alt="" 
-            >
-            <a 
-              href="https://wellington-damasio.github.io/Huddle-Landing-Page/"
-              class="website-link"
-              target="_blank"
-            >
-            </a>
-            <div class="work__content">
-              <h3 class="work__title accent">Huddle Landing Page</h3>
-              <p class="work__text">
-                Simple landing page with a cool footer design.
-              </p>
-              <p class="work__text">
-                A very interesting website to build that teached me a lot of 
-                tricks when to comes to <span class="accent">CSS</span>
-              </p>
-              <div class="work__techs">
-                <small class="work__techs__tech">HTML5</small>
-                <small class="work__techs__tech">CSS3</small>
-                <small class="work__techs__tech">JavaScript</small>
-                <small class="work__techs__tech">Figma</small>
-              </div>
-              <div class="work__links">
-                <a 
-                  href="https://github.com/wellington-damasio/Huddle-Landing-Page" 
-                  target="_blank"
-                  class="work__links__link"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a 
-                  href="https://wellington-damasio.github.io/Huddle-Landing-Page/" 
-                  target="_blank"
-                  class="work__links__link"
-                >
-                  <i class="fa-solid fa-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- About Me Section -->
-      <article class="about-me mb-6" id="about-me">
-        <h3 class="heading-2 mb-2">About Me</h3>
-        <div class="about-me__container">
-          <img src="images/programming.svg" alt="" class="about-me__img">
-          <div class="about-me__content">
-            <h3 class="about-me__title">I love developing websites</h3>
-            <p class="about-me__paragraph">
-              I'm a frontend developer who loves studying web development and build websites 
-            </p>
-            <p class="about-me__paragraph">
-              My main skill is 
-              <span class="accent">
-                converting static website designs into beautiful 
-                and optimized websites.
-              </span>
-                I love giving life to a good design.
-            </p>
-            <p class="about-me__paragraph">
-              I love a challenge and I'm always ready to learn something new if it is 
-              needed to deliver what you want!
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Contact Form -->
-      <div class="form__title">
-        <h4 class="form__title__text">Get in Touch </h4>
-        <i class="fa-sharp fa-solid fa-envelope"></i>
       </div>
-      <p class="form__text mb-1">
-        If you think I'm the right fit for your project, let me know. Send a message
-        and I will respond to you as soon as possible.
-      </p>
-      <p class="form__text accent mb-2">I'm always excited for new work!</p>
 
-      <form class="form mb-3" id="contact" action="https://formsubmit.co/welldamdev@gmail.com" method="POST">
-        <div class="form__wrapper">
-          <label for="name" class="form__label">Name</label>
-          <input type="text" class="form__input" id="name" name="name"/>
+      <img src="images/developer.svg" alt="" class="hero__img">
+    </article>
+
+    <!-- Tools Section -->
+    <article class="tools mb-6">
+      <h3 class="heading-2 mb-2">Tools I like to use</h3>
+      <div class="tools__container">
+        <!-- Tool #1 -->
+        <div class="tool">
+          <img src="images/html.png" alt="" class="tool__icon">
+          <p class="tool__name">HTML5</p>
         </div>
 
-        <div class="form__wrapper">
-          <label for="email" class="form__label">Email</label>
-          <input type="email" class="form__input" id="email" name="email"/>
+        <!-- Tool #2 -->
+        <div class="tool">
+          <img src="images/css.png" alt="" class="tool__icon">
+          <p class="tool__name">CSS3</p>
         </div>
 
-        <div class="form__wrapper">
-          <label for="message" class="form__label">Message</label>
-          <textarea id="message" class="form__textarea" name="message"></textarea>
+        <!-- Tool #3 -->
+        <div class="tool">
+          <img src="images/javascript.png" alt="" class="tool__icon">
+          <p class="tool__name">JavaScript</p>
         </div>
 
-        <!-- Remove Captcha -->
-        <input type="hidden" name="_captcha" value="false">
+        <!-- Tool #4 -->
+        <div class="tool">
+          <img src="images/bootstrap.png" alt="" class="tool__icon">
+          <p class="tool__name">Bootstrap</p>
+        </div>
 
-        <!-- Página de Obrigado -->
-        <input type="hidden" name="_next" value="http://127.0.0.1:8080/thanks.html">
+        <!-- Tool #5 -->
+        <div class="tool">
+          <img src="images/figma.png" alt="" class="tool__icon">
+          <p class="tool__name">Figma</p>
+        </div>
 
-        <button type="submit" class="btn">Get in Touch</button>
-      </form>
-    </main>
+        <!-- Tool #6 -->
+        <div class="tool">
+          <img src="images/react.png" alt="" class="tool__icon">
+          <p class="tool__name">React</p>
+        </div>
+      </div>
+    </article>
 
-    <footer class="footer">
-      <p class="footer__text">
-        Designed & build with  
-        <i class="fa-solid fa-heart heart-icon"></i> 
-        by Wellington Damasio
-      </p>
-    </footer>
-  </body>
-</html> 
+    <!-- Works Section -->
+    <section class="works mb-6" id="works">
+      <h3 class="heading-2 mb-2">Works</h3>
+
+      <div class="works__container">
+        <!-- Work #1 -->
+        <article class="work" data-animation="fadeIn-right">
+          <!-- <div class="work__img-placeholder"></div> -->
+          <img src="images/screenshots/payAPI_home.png" class="work__img" alt="">
+          <a href="https://wellington-damasio.github.io/payAPI-landing-page/index.html" class="website-link"
+            target="_blank">
+          </a>
+          <div class="work__content">
+            <h3 class="work__title accent">PayAPI Website</h3>
+            <p class="work__text">
+              This was a challenge from
+              <a class="text-link" href="https://www.frontendmentor.io/" target="_blank">Frontend Mentor</a>. One of the
+              most complex
+              and fun layouts I coded so far.
+            </p>
+            <p class="work__text">This is a demonstration of somethings I can do with my skills
+              <span class="accent">CSS</span> skills
+            </p>
+            <div class="work__techs">
+              <small class="work__techs__tech">HTML5</small>
+              <small class="work__techs__tech">CSS3</small>
+              <small class="work__techs__tech">JavaScript</small>
+              <small class="work__techs__tech">Figma</small>
+            </div>
+            <div class="work__links">
+              <a href="https://github.com/wellington-damasio/payAPI-landing-page" target="_blank"
+                class="work__links__link">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://wellington-damasio.github.io/payAPI-landing-page/index.html" target="_blank"
+                class="work__links__link">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Work #2 -->
+        <article class="work" data-animation="fadeIn-left">
+          <!-- <div class="work__img-placeholder"></div> -->
+          <img src="images/screenshots/todo_list.png" alt="" class="work__img">
+          <a href="https://damasio-todo.netlify.app/" class="website-link" target="_blank">
+          </a>
+          <div class="work__content">
+            <h3 class="work__title accent">Rocket's Todo List</h3>
+            <p class="work__text">
+              A todo list where you can create tasks, complete tasks and so on.
+            </p>
+            <p class="work__text">
+              One of my first projects using <span class="accent">React</span>
+              with <span class="accent">TypeScript</span>, two of the
+              most used and effective tools of modern web development.
+              <span style="color: var(--gray)">(for portuguese speakers)</span>
+            </p>
+            <div class="work__techs">
+              <small class="work__techs__tech">HTML5</small>
+              <small class="work__techs__tech">CSS3</small>
+              <small class="work__techs__tech">React</small>
+              <small class="work__techs__tech">TypeScript</small>
+              <small class="work__techs__tech">Figma</small>
+            </div>
+            <div class="work__links">
+              <a href="https://github.com/wellington-damasio/todo_list" target="_blank" class="work__links__link">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://damasio-todo.netlify.app/" target="_blank" class="work__links__link">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Work #3 -->
+        <article class="work" data-animation="fadeIn-right">
+          <!-- <div class="work__img-placeholder"></div> -->
+          <img src="images/screenshots/sunnyside_lp.png" alt="" class="work__img">
+          <a href="https://wellington-damasio.github.io/sunnyside_landing_page" class="website-link" target="_blank">
+          </a>
+          <div class="work__content">
+            <h3 class="work__title accent">Sunnyside Home Page</h3>
+            <p class="work__text">
+              Another challenge from
+              <a class="text-link" href="https://www.frontendmentor.io/" target="_blank">Frontend Mentor</a>.
+            </p>
+            <p class="work__text">
+              This project upgraded my "positioning elements skills" to the
+              next level. Working with the typography was also interestig
+            </p>
+            <p class="work__text">
+              I'm planning to create own new designs for the other pages as
+              well.
+            </p>
+            <div class="work__techs">
+              <small class="work__techs__tech">HTML5</small>
+              <small class="work__techs__tech">CSS3</small>
+              <small class="work__techs__tech">JavaScript</small>
+              <small class="work__techs__tech">Figma</small>
+            </div>
+            <div class="work__links">
+              <a href="https://github.com/wellington-damasio/sunnyside_landing_page" target="_blank"
+                class="work__links__link">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://wellington-damasio.github.io/sunnyside_landing_page" target="_blank"
+                class="work__links__link">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Work #4 -->
+        <article class="work" data-animation="fadeIn-left">
+          <!-- <div class="work__img-placeholder"></div> -->
+          <img src="images/screenshots/coffee_delivery_website.png" class="work__img" alt="">
+          <a href="https://damasio-coffee-delivery.netlify.app" class="website-link" target="_blank">
+          </a>
+          <div class="work__content">
+            <h3 class="work__title accent">Coffee Delivery E-commerce</h3>
+            <p class="work__text">
+              This is a coffee e-commerce with modern design, improved forms
+              and responsive design
+            </p>
+            <p class="work__text">
+              It was a great challenge the Rocketseat's Igite course
+            </p>
+            <div class="work__techs">
+              <small class="work__techs__tech">React</small>
+              <small class="work__techs__tech">TypeScript</small>
+              <small class="work__techs__tech">styled-components</small>
+              <small class="work__techs__tech">react-hook-form</small>
+              <small class="work__techs__tech">react-router-dom</small>
+            </div>
+            <div class="work__links">
+              <a href="https://github.com/wellington-damasio/coffee_delivery_website" target="_blank"
+                class="work__links__link">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://damasio-coffee-delivery.netlify.app" target="_blank" class="work__links__link">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <article class="about-me mb-6" id="about-me">
+      <h3 class="heading-2 mb-2">About Me</h3>
+      <div class="about-me__container">
+        <img src="images/programming.svg" alt="" class="about-me__img">
+        <div class="about-me__content">
+          <h3 class="about-me__title">I love developing websites</h3>
+          <p class="about-me__paragraph">
+            I'm a frontend developer who loves studying web development and build websites
+          </p>
+          <p class="about-me__paragraph">
+            My main skill is
+            <span class="accent">
+              converting static website designs into beautiful
+              and optimized websites.
+            </span>
+            I love giving life to a good design.
+          </p>
+          <p class="about-me__paragraph">
+            I love a challenge and I'm always ready to learn something new if it is
+            needed to deliver what you want!
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Contact Form -->
+    <div class="form__title">
+      <h4 class="form__title__text">Get in Touch </h4>
+      <i class="fa-sharp fa-solid fa-envelope"></i>
+    </div>
+    <p class="form__text mb-1">
+      If you think I'm the right fit for your project, let me know. Send a message
+      and I will respond to you as soon as possible.
+    </p>
+    <p class="form__text accent mb-2">I'm always excited for new work!</p>
+
+    <form class="form mb-3" id="contact" action="https://formsubmit.co/welldamdev@gmail.com" method="POST">
+      <div class="form__wrapper">
+        <label for="name" class="form__label">Name</label>
+        <input type="text" class="form__input" id="name" name="name" />
+      </div>
+
+      <div class="form__wrapper">
+        <label for="email" class="form__label">Email</label>
+        <input type="email" class="form__input" id="email" name="email" />
+      </div>
+
+      <div class="form__wrapper">
+        <label for="message" class="form__label">Message</label>
+        <textarea id="message" class="form__textarea" name="message"></textarea>
+      </div>
+
+      <!-- Remove Captcha -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Página de Obrigado -->
+      <input type="hidden" name="_next" value="https://wellingtondamasio.com/thanks">
+      <button type="submit" class="btn">Get in Touch</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">
+      Designed & build with
+      <i class="fa-solid fa-heart heart-icon"></i>
+      by Wellington Damasio
+    </p>
+  </footer>
+</body>
+
+</html>

@@ -19,13 +19,15 @@
 $font-lexend-deca: 'Lexend Deca', sans-seif;
 $font-fira-code: 'Fira Code', monospace;
 
-.heading-2 { // Used in the headings of each section
-    font-family: $font-lexend-deca;    
+.heading-2 {
+    // Used in the headings of each section
+    font-family: $font-lexend-deca;
     font-size: 1.6rem;
     // font-size: 2.5rem;
 }
 
-.heading-3 { // Used in the Works Component
+.heading-3 {
+    // Used in the Works Component
     font-family: $font-lexend-deca;
     font-size: 1.875rem;
     font-weight: 500;
@@ -44,7 +46,9 @@ html {
     scroll-behavior: smooth;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -95,6 +99,7 @@ button {
         @content;
     }
 }
+
 // ---------------------------------------
 //                  Base
 // ----------------------------------------
@@ -250,11 +255,11 @@ body {
 
     &__btn {
         color: var(--white);
-        font-size: 1.6rem; 
-        
+        font-size: 1.6rem;
+
         &--close {
             color: var(--white);
-            font-size: 1.6rem; 
+            font-size: 1.6rem;
         }
     }
 
@@ -279,7 +284,7 @@ body {
         align-items: center;
         gap: 2.4rem;
         font-size: 1.2rem;
-        width:75%;
+        width: 75%;
         height: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -294,6 +299,7 @@ body {
     }
 
     @include tablet-media {
+
         &__wrapper,
         &__btn {
             display: none;
@@ -306,7 +312,7 @@ body {
     0% {
         position: relative;
         top: -8rem;
-        opacity: 0; 
+        opacity: 0;
     }
 
     100% {
@@ -405,7 +411,7 @@ body {
         display: flex;
         gap: 1rem;
 
-        & > a {
+        &>a {
             color: var(--white);
             font-size: 1.2rem;
 
@@ -429,6 +435,7 @@ body {
         display: flex;
         gap: 2rem;
         align-items: center;
+
         &__img {
             display: block;
             position: relative;
@@ -447,7 +454,7 @@ body {
 
     @include large-pc-media {
         &__title {
-            font-size: 3.75rem;   
+            font-size: 3.75rem;
         }
 
         &__subtitle {
@@ -464,27 +471,27 @@ body {
 
 // ----------------- Tools Section -----------------
 @keyframes rotate {
-  0% {
-    transform: rotate(0)
-  }
+    0% {
+        transform: rotate(0)
+    }
 
-  100% {
-    transform: rotate(360deg)
-  }
+    100% {
+        transform: rotate(360deg)
+    }
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(1)
-  }
+    0% {
+        transform: scale(1)
+    }
 
-  50% {
-    transform: scale(1.2)
-  }
+    50% {
+        transform: scale(1.2)
+    }
 
-  100% {
-    transform: scale(1)
-  }
+    100% {
+        transform: scale(1)
+    }
 }
 
 .tools {
@@ -519,7 +526,7 @@ body {
     cursor: pointer;
 
     &__icon {
-        width: 70px;    
+        width: 70px;
         aspect-ratio: 1 / 1;
     }
 
@@ -535,9 +542,9 @@ body {
         }
 
         &:last-child:hover .tool__icon {
-           animation-name: rotate;
-           animation-duration: 2s;
-           animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation-name: rotate;
+            animation-duration: 2s;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
         }
     }
 
@@ -569,14 +576,14 @@ body {
 .work {
     position: relative;
 
-    & > .website-link {
+    &>.website-link {
         position: absolute;
         width: 100%;
         height: 44%;
         right: 0;
         top: 0;
     }
-    
+
     &__img-placeholder {
         position: relative;
         width: 100%;
@@ -606,7 +613,7 @@ body {
         min-height: 12rem;
         margin-bottom: 1rem;
         border-radius: 4px;
-        aspect-ratio:  3.5 / 2;
+        aspect-ratio: 3.5 / 2;
         object-fit: cover;
     }
 
@@ -626,7 +633,9 @@ body {
         color: var(--gray);
         font-weight: 500;
         display: flex;
-        gap: 1.1rem;
+        flex-wrap: wrap;
+        column-gap: 1.1rem;
+        row-gap: 0.6rem;
         margin-bottom: 1rem;
         margin-top: 1rem;
         cursor: default;
@@ -646,15 +655,15 @@ body {
         align-items: center;
         gap: 2rem;
 
-        &:nth-child(even) > .website-link {
+        &:nth-child(even)>.website-link {
             position: absolute;
             width: 50%;
             height: 100%;
             right: 0;
             top: 0;
         }
-    
-        &:nth-child(odd) > .website-link {
+
+        &:nth-child(odd)>.website-link {
             position: absolute;
             width: 50%;
             height: 100%;
@@ -671,17 +680,18 @@ body {
         }
 
         &:nth-child(even) .work__content {
-            order:  1;
+            order: 1;
         }
 
         &:nth-child(even) .work__img-placeholder,
         &:nth-child(even) .work__img {
-            order:  2;
+            order: 2;
         }
     }
 
     @include pc-media {
         gap: 5rem;
+
         &__img-placeholder,
         &__img {
             min-height: 15rem;
@@ -693,6 +703,7 @@ body {
     }
 
     @include large-pc-media {
+
         &__img-placeholder,
         &__img {
             min-height: 22rem;
@@ -858,7 +869,7 @@ body {
     @include tablet-media {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, auto);
-        
+
         &__wrapper:nth-child(1) {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
@@ -916,7 +927,7 @@ body {
     background-color: var(--black);
     min-height: 2rem;
     margin-top: auto;
-    
+
     &__text {
         font-size: 0.75rem;
         color: var(--white);

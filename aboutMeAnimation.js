@@ -7,8 +7,6 @@ const revealElementsOnScroll = () => {
     let elementTop = aboutMeContainer.getBoundingClientRect().top
     let elementVisible = 150
 
-    console.log(window.innerWidth)
-
     if(elementTop < windowHeight - elementVisible) {
         aboutMeContent.classList.add('anm-flow-left')
         aboutMeImage.classList.add('anm-flow-down')
