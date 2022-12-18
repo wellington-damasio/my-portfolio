@@ -31,7 +31,9 @@ html {
   scroll-behavior: smooth;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -507,7 +509,9 @@ body {
   color: var(--gray);
   font-weight: 500;
   display: flex;
-  gap: 1.1rem;
+  flex-wrap: wrap;
+  column-gap: 1.1rem;
+  row-gap: 0.6rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
   cursor: default;
